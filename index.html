@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shubham Lashkan — Salesforce Developer & Educator</title>
+  <title>Shubham Lashkan — Senior Software Engineer & Educator</title>
 
   <!-- ── FAVICON (SVG inline — no extra file needed) ── -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230176D3'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Sora,sans-serif' font-weight='800' font-size='13' fill='white' letter-spacing='-1'>SL</text></svg>" />
 
   <!-- ── SEO ── -->
   <meta name="description" content="Shubham Lashkan — 6× Salesforce Certified Developer, educator, and content creator from Indore, India. Apex, LWC, integrations, and teaching the Salesforce community." />
-  <meta name="keywords" content="Shubham Lashkan, Salesforce Developer, Apex, LWC, Lightning Web Components, Salesforce Certified, Educator, Indore" />
+  <meta name="keywords" content="Shubham Lashkan, Senior Software Engineer, Salesforce Developer, Apex, LWC, Lightning Web Components, Salesforce Certified, Educator, Indore" />
   <meta name="author" content="Shubham Lashkan" />
   <link rel="canonical" href="https://shubhamlashkan.com/" />
 
   <!-- ── OPEN GRAPH (Facebook, LinkedIn, WhatsApp) ── -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://shubhamlashkan.com/" />
-  <meta property="og:title"       content="Shubham Lashkan — Salesforce Developer & Educator" />
+  <meta property="og:title"       content="Shubham Lashkan — Senior Software Engineer & Educator" />
   <meta property="og:description" content="6× Salesforce Certified Developer from India. Building on Salesforce. Teaching the world." />
   <meta property="og:image"       content="https://shubhamlashkan.com/profile.png" />
   <meta property="og:image:width"  content="1200" />
@@ -29,7 +29,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@shubhamlashkan" />
   <meta name="twitter:creator"     content="@shubhamlashkan" />
-  <meta name="twitter:title"       content="Shubham Lashkan — Salesforce Developer & Educator" />
+  <meta name="twitter:title"       content="Shubham Lashkan — Senior Software Engineer & Educator" />
   <meta name="twitter:description" content="6× Salesforce Certified Developer from India. Building on Salesforce. Teaching the world." />
   <meta name="twitter:image"       content="https://shubhamlashkan.com/profile.png" />
 
@@ -252,7 +252,7 @@
     .stat-label { font-size: .75rem; color: var(--muted); margin-top: .2rem; line-height: 1.4; }
 
     /* ── PROJECTS ── */
-    #projects { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    #projects { background: var(--bg); border-bottom: 1px solid var(--border); }
     .project-card {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -327,7 +327,7 @@
     }
 
     /* ── AUDIENCE ── */
-    #audience { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    #audience { background: var(--bg); border-bottom: 1px solid var(--border); }
     .audience-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -335,7 +335,7 @@
     }
     .audience-card {
       padding: 1.5rem;
-      background: var(--bg);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       display: flex; flex-direction: column; gap: 1rem;
@@ -353,7 +353,7 @@
     .audience-card:hover { border-color: var(--accent-bright); transform: translateY(-3px); }
     .audience-card.fun {
       border-color: rgba(255,183,93,.25);
-      background: linear-gradient(135deg, rgba(255,183,93,.06) 0%, var(--bg) 100%);
+      background: linear-gradient(135deg, rgba(255,183,93,.06) 0%, var(--surface) 100%);
     }
     .audience-card.fun::before { color: rgba(255,183,93,.15); }
     .audience-text {
@@ -380,7 +380,7 @@
     }
     .yt-dot { width: 6px; height: 6px; border-radius: 50%; background: #FF0000; flex-shrink: 0; }
 
-    #certs { border-bottom: 1px solid var(--border); }
+    #certs { background: var(--bg2); border-bottom: 1px solid var(--border); }
     .certs-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
       gap: 1rem; margin-top: 2.5rem;
@@ -423,14 +423,14 @@
     .trailblazer-sub { font-size: .78rem; color: var(--muted); line-height: 1.5; }
 
     /* ── SKILLS ── */
-    #skills { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    #skills { background: var(--bg); border-bottom: 1px solid var(--border); }
     .skills-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
       gap: 1rem; margin-top: 2.5rem;
     }
     .skill-card {
       padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: 10px;
-      background: var(--bg); transition: border-color .2s, transform .2s;
+      background: var(--surface); transition: border-color .2s, transform .2s;
     }
     .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
     .skill-icon { font-size: 1.4rem; margin-bottom: .7rem; }
@@ -438,7 +438,7 @@
     .skill-desc { font-size: .78rem; color: var(--muted); line-height: 1.55; }
 
     /* ── YOUTUBE ── */
-    #videos { background: var(--bg); border-bottom: 1px solid var(--border); }
+    #videos { background: var(--bg2); border-bottom: 1px solid var(--border); }
     .videos-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.25rem; margin-top: 2.5rem;
@@ -481,7 +481,7 @@
     .yt-cta-row { margin-top: 2rem; display: flex; }
 
     /* ── ARTICLES ── */
-    #articles { background: var(--bg); border-bottom: 1px solid var(--border); }
+    #articles { background: var(--bg2); border-bottom: 1px solid var(--border); }
     .award-banner {
       display: flex; align-items: center; gap: 1rem;
       padding: 1.1rem 1.5rem;
@@ -515,14 +515,14 @@
     .article-meta { margin-left: auto; font-size: .72rem; color: var(--muted); flex-shrink: 0; padding-left: .5rem; }
 
     /* ── CONTENT CHANNELS ── */
-    #content { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    #content { background: var(--bg); border-bottom: 1px solid var(--border); }
     .channels-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1rem; margin-top: 2.5rem;
     }
     .channel-card {
       padding: 1.5rem; border: 1px solid var(--border); border-radius: 10px;
-      text-decoration: none; color: inherit; background: var(--bg);
+      text-decoration: none; color: inherit; background: var(--surface);
       transition: border-color .2s, transform .2s; display: block;
     }
     .channel-card:hover { border-color: var(--accent); transform: translateY(-2px); }
@@ -538,7 +538,7 @@
 
     /* ── CONTACT ── */
     #contact {
-      background: var(--bg);
+      background: var(--bg2);
       border-bottom: 1px solid var(--border);
       position: relative; overflow: hidden;
     }
@@ -779,8 +779,59 @@
     @media (max-width: 480px) {
       .stats-row { grid-template-columns: 1fr 1fr; }
     }
+    /* ── ANIMATIONS — OPTION E ── */
+
+    /* 1. Slide & Fade — default for single blocks */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s cubic-bezier(.22,.68,0,1.2), transform .65s cubic-bezier(.22,.68,0,1.2);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* 2. Split Reveal — headings slide from left */
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-36px);
+      transition: opacity .6s cubic-bezier(.22,.68,0,1.1), transform .6s cubic-bezier(.22,.68,0,1.1);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    /* Content paired with heading slides from right */
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(36px);
+      transition: opacity .6s cubic-bezier(.22,.68,0,1.1), transform .6s cubic-bezier(.22,.68,0,1.1);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* 3. Blur to Sharp — hero cards and project cards */
+    .reveal-blur {
+      opacity: 0;
+      transform: scale(.96);
+      filter: blur(6px);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.22,.68,0,1.2), filter .6s ease;
+    }
+    .reveal-blur.visible { opacity: 1; transform: scale(1); filter: blur(0); }
+
+    /* 4. Stagger children — card grids */
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .5s ease, transform .5s cubic-bezier(.22,.68,0,1.2);
+    }
+    .reveal-stagger.visible > *:nth-child(1)  { opacity: 1; transform: translateY(0); transition-delay: .05s; }
+    .reveal-stagger.visible > *:nth-child(2)  { opacity: 1; transform: translateY(0); transition-delay: .12s; }
+    .reveal-stagger.visible > *:nth-child(3)  { opacity: 1; transform: translateY(0); transition-delay: .19s; }
+    .reveal-stagger.visible > *:nth-child(4)  { opacity: 1; transform: translateY(0); transition-delay: .26s; }
+    .reveal-stagger.visible > *:nth-child(5)  { opacity: 1; transform: translateY(0); transition-delay: .33s; }
+    .reveal-stagger.visible > *:nth-child(6)  { opacity: 1; transform: translateY(0); transition-delay: .40s; }
+    .reveal-stagger.visible > *:nth-child(7)  { opacity: 1; transform: translateY(0); transition-delay: .47s; }
+    .reveal-stagger.visible > *:nth-child(8)  { opacity: 1; transform: translateY(0); transition-delay: .54s; }
+
     @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .reveal, .reveal-left, .reveal-right, .reveal-blur { opacity: 1; transform: none; filter: none; transition: none; }
+      .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
     }
   </style>
 </head>
@@ -819,7 +870,7 @@
     <div class="hero-inner">
       <div class="hero-eyebrow">
         <span class="eyebrow-dot"></span>
-        6× Salesforce Certified · Developer · Educator
+        6× Salesforce Certified · Senior Engineer · Educator
       </div>
       <div style="margin-bottom:1.5rem;">
         <span class="avail-badge"><span class="pulse"></span>Open to freelance Salesforce projects</span>
@@ -857,7 +908,7 @@
         <div class="hero-card-content">
           <div class="hero-card-icon">☁️</div>
           <div>
-            <div class="hero-card-title">Salesforce Developer</div>
+            <div class="hero-card-title">Senior Software Engineer</div>
             <div class="hero-card-sub">Advanz101 · Ridge Consulting Partner · Since Jul 2021</div>
           </div>
         </div>
@@ -909,7 +960,8 @@
       <div class="about-text">
         <p class="section-label">About</p>
         <h2>Developer by craft.<br/>Educator by choice.</h2>
-        <p>I'm a Software Engineer and Salesforce Developer at Advanz101 — a Salesforce Consulting Partner — with over five years of hands-on experience. My work centers on Apex development, Lightning Web Components, and end-to-end integrations with 3rd party platforms using Apex and tools like Zapier.</p>
+        <p>I'm a Senior Software Engineer at Advanz101 — a Salesforce Ridge Consulting Partner — with over five years of hands-on experience. My work centers on Apex development, Lightning Web Components, and end-to-end integrations with 3rd party platforms using Apex and tools like Zapier.</p>
+        <p>I've engineered 15+ scalable Salesforce solutions, architected REST integrations handling 10,000+ real-time API calls daily, led AppExchange managed package development through full security review, and mentor junior developers through code reviews and PR governance on GitHub and Azure DevOps.</p>
         <p>Outside of client work, I'm passionate about knowledge-sharing. I teach coding, Salesforce, and Python through my YouTube channel and personal blog. Writing articles for Apex Hours, Salesforce Ben, and Medium is my way of giving back to a community that helped shape me.</p>
         <a href="https://in.linkedin.com/in/shubhamlashkan" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.5rem;width:fit-content;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -954,16 +1006,111 @@
       <!-- Advanz101 -->
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
-        <div class="tl-period">Jul 2021 — 2026 · 5 years</div>
-        <div class="tl-company">Advanz101</div>
-        <div class="tl-role">Salesforce Developer · Ridge Consulting Partner</div>
+        <div class="tl-period">Jul 2021 — Present · 5 years</div>
+        <div class="tl-company">Advanz101 Business Systems</div>
+        <div class="tl-role">Senior Software Engineer · Salesforce Ridge Consulting Partner</div>
         <div class="tl-tags">
           <span class="tl-tag">Apex</span>
           <span class="tl-tag">LWC</span>
           <span class="tl-tag">Sales Cloud</span>
-          <span class="tl-tag">Integrations</span>
-          <span class="tl-tag">Flows</span>
+          <span class="tl-tag">Service Cloud</span>
+          <span class="tl-tag">Experience Cloud</span>
           <span class="tl-tag">REST / SOAP</span>
+          <span class="tl-tag">AppExchange</span>
+          <span class="tl-tag">GitHub · Azure DevOps</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT WORK -->
+<section id="work" style="background:var(--bg2);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <p class="section-label reveal">Client Work</p>
+    <h2 class="reveal">What I've Built.</h2>
+    <p class="section-sub reveal">A selection of enterprise projects delivered at Advanz101. Client details are intentionally kept high-level.</p>
+
+    <div style="display:flex;flex-direction:column;gap:1.25rem;">
+
+      <!-- Project 1 -->
+      <div class="project-card reveal" style="cursor:default;">
+        <div class="project-icon-wrap" style="background:rgba(46,132,74,.12);">⚖️</div>
+        <div class="project-body">
+          <div class="project-top">
+            <div class="project-name">Legal Services CRM Automation</div>
+            <span class="project-tag" style="border-color:rgba(46,132,74,.4);color:#4CAF7D;background:rgba(46,132,74,.08);">Legal</span>
+            <span class="project-tag" style="border-color:var(--border-light);color:var(--muted);">Salesforce Developer</span>
+          </div>
+          <p class="project-desc">Automated complex CRM workflows for a legal services firm. Integrated a ringless voicemail platform via API and connected EventBrite for event-driven lead management. Built high-volume Batch and Scheduled Apex jobs to handle large-scale data processing and business logic reliably.</p>
+          <div class="project-features">
+            <span class="project-feature">📞 Ringless Voicemail API</span>
+            <span class="project-feature">⚙️ Batch & Scheduled Apex</span>
+            <span class="project-feature">🔗 EventBrite Integration</span>
+            <span class="project-feature">⚡ Zapier</span>
+            <span class="project-feature">☁️ Sales Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card reveal" style="cursor:default;">
+        <div class="project-icon-wrap" style="background:rgba(144,80,233,.12);">📦</div>
+        <div class="project-body">
+          <div class="project-top">
+            <div class="project-name">AppExchange Product Development</div>
+            <span class="project-tag" style="border-color:rgba(144,80,233,.4);color:#9050E9;background:rgba(144,80,233,.08);">AppExchange</span>
+            <span class="project-tag" style="border-color:var(--border-light);color:var(--muted);">Product Developer</span>
+          </div>
+          <p class="project-desc">Led full lifecycle development of two AppExchange managed packages through Salesforce security review. Built a duplicate record merge tool preserving critical data points using Apex and LWC, and a webhook-based lead ingestion system syncing Facebook Lead Ads with Salesforce in real time.</p>
+          <div class="project-features">
+            <span class="project-feature">📋 Managed Packages</span>
+            <span class="project-feature">🔁 Webhook Integration</span>
+            <span class="project-feature">📣 Facebook Lead Ads</span>
+            <span class="project-feature">⚙️ Apex & LWC</span>
+            <span class="project-feature">✅ Security Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card reveal" style="cursor:default;">
+        <div class="project-icon-wrap" style="background:rgba(6,174,213,.12);">📡</div>
+        <div class="project-body">
+          <div class="project-top">
+            <div class="project-name">Digital Customer Portal — Telecom</div>
+            <span class="project-tag" style="border-color:rgba(6,174,213,.4);color:#06AED5;background:rgba(6,174,213,.08);">Telecom</span>
+            <span class="project-tag" style="border-color:var(--border-light);color:var(--muted);">Senior Developer</span>
+          </div>
+          <p class="project-desc">Designed and built an Experience Cloud portal serving 500+ users with custom registration flows, OTP-based two-factor authentication, and fully branded LWC components. Integrated Salesforce with three telecom platforms via Apex REST services and implemented complex payment processing workflows.</p>
+          <div class="project-features">
+            <span class="project-feature">🌐 Experience Cloud</span>
+            <span class="project-feature">🔐 OTP 2FA</span>
+            <span class="project-feature">💳 Payment Processing</span>
+            <span class="project-feature">🔗 3 REST Integrations</span>
+            <span class="project-feature">👥 500+ Users</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card reveal" style="cursor:default;">
+        <div class="project-icon-wrap" style="background:rgba(254,147,57,.12);">🏥</div>
+        <div class="project-body">
+          <div class="project-top">
+            <div class="project-name">Enterprise Healthcare CRM</div>
+            <span class="project-tag" style="border-color:rgba(254,147,57,.4);color:#FE9339;background:rgba(254,147,57,.08);">Healthcare</span>
+            <span class="project-tag" style="border-color:var(--border-light);color:var(--muted);">Production Support</span>
+          </div>
+          <p class="project-desc">Stabilised a complex Sales and Service Cloud implementation for a healthcare enterprise. Resolved critical Apex exceptions, governor limit breaches, and automation failures. Collaborated cross-functionally with QA, Admin, and Integration teams to ensure high uptime for healthcare stakeholders.</p>
+          <div class="project-features">
+            <span class="project-feature">☁️ Sales & Service Cloud</span>
+            <span class="project-feature">🔍 Root Cause Analysis</span>
+            <span class="project-feature">⚡ Governor Limit Fixes</span>
+            <span class="project-feature">🤝 Cross-team Collaboration</span>
+            <span class="project-feature">🏥 Healthcare</span>
+          </div>
         </div>
       </div>
 
@@ -1108,7 +1255,7 @@
       <div class="skill-card reveal">
         <div class="skill-icon">☁️</div>
         <div class="skill-name">Apex Development</div>
-        <div class="skill-desc">Triggers, batch jobs, scheduled Apex, dynamic SOQL, and REST/SOAP integrations.</div>
+        <div class="skill-desc">Triggers, batch jobs, scheduled Apex, dynamic SOQL, REST/SOAP web services, and named credentials.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">⚡</div>
@@ -1118,12 +1265,17 @@
       <div class="skill-card reveal">
         <div class="skill-icon">🔧</div>
         <div class="skill-name">Declarative Salesforce</div>
-        <div class="skill-desc">Flows, validation rules, approval processes, custom metadata, and record types.</div>
+        <div class="skill-desc">Flows, validation rules, approval processes, custom metadata, settings, and record types.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">🔗</div>
         <div class="skill-name">Integrations</div>
-        <div class="skill-desc">Connecting Salesforce with Facebook, Jira, Twitter, and third-party APIs.</div>
+        <div class="skill-desc">REST/SOAP integrations handling 10K+ daily API calls across external platforms including Facebook, Jira, and Zapier.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">📦</div>
+        <div class="skill-name">AppExchange Development</div>
+        <div class="skill-desc">Full lifecycle managed package development — architecture, security review, and AppExchange publishing.</div>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon">🤖</div>
@@ -1131,19 +1283,24 @@
         <div class="skill-desc">Building and deploying AI agents on the Salesforce Agentforce platform.</div>
       </div>
       <div class="skill-card reveal">
+        <div class="skill-icon">🛠</div>
+        <div class="skill-name">DevOps & Governance</div>
+        <div class="skill-desc">GitHub, Azure DevOps, PR management, code reviews, release management, and mentoring junior developers.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">Salesforce Clouds</div>
+        <div class="skill-desc">Sales Cloud, Service Cloud, Experience Cloud — with exposure to Automotive Cloud and OmniStudio.</div>
+      </div>
+      <div class="skill-card reveal">
         <div class="skill-icon">🐍</div>
         <div class="skill-name">Python</div>
         <div class="skill-desc">Scripting, automation, and tutorials spanning data and web domains.</div>
       </div>
       <div class="skill-card reveal">
-        <div class="skill-icon">🌐</div>
-        <div class="skill-name">Web Development</div>
-        <div class="skill-desc">HTML, CSS, JavaScript — building projects and teaching modern web fundamentals.</div>
-      </div>
-      <div class="skill-card reveal">
         <div class="skill-icon">✍️</div>
         <div class="skill-name">Technical Writing</div>
-        <div class="skill-desc">Publishing in-depth tutorials on Salesforce Ben, Apex Hours, Medium, and his personal blog.</div>
+        <div class="skill-desc">Publishing in-depth tutorials on Salesforce Ben, Apex Hours, Medium, and Salesforce Verse.</div>
       </div>
     </div>
   </div>
@@ -1568,17 +1725,56 @@
     document.body.style.overflow = '';
   }
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 55);
-        io.unobserve(e.target);
+  // ── OPTION E ANIMATIONS ──
+  // Types: .reveal (slide+fade), .reveal-left/.reveal-right (split), .reveal-blur, .reveal-stagger (children)
+  const animSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-blur, .reveal-stagger';
+  const allAnimEls = document.querySelectorAll(animSelectors);
+
+  const animObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Small delay so elements entering together feel staggered
+        const el = entry.target;
+        const delay = el.dataset.delay || 0;
+        setTimeout(() => el.classList.add('visible'), delay);
+        animObserver.unobserve(el);
       }
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => io.observe(el));
+  }, { threshold: 0.12 });
+
+  allAnimEls.forEach(el => animObserver.observe(el));
+
+  // Apply correct animation classes to specific elements
+  // Section labels + h2 → split reveal
+  document.querySelectorAll('.section-label').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('reveal-left');
+  });
+  document.querySelectorAll('section h2').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('reveal-left');
+  });
+  document.querySelectorAll('.section-sub').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('reveal-right');
+  });
+
+  // Card grids → stagger
+  document.querySelectorAll('.skills-grid, .certs-grid, .videos-grid, .channels-grid, .audience-grid').forEach(el => {
+    el.classList.add('reveal-stagger');
+    // Re-observe since we just added the class
+    animObserver.observe(el);
+  });
+
+  // Project cards, hero cards, award banner → blur
+  document.querySelectorAll('.project-card, .award-banner, .trailblazer-cta').forEach(el => {
+    el.classList.remove('reveal');
+    el.classList.add('reveal-blur');
+    animObserver.observe(el);
+  });
+
+  // Re-observe everything with updated classes
+  document.querySelectorAll(animSelectors).forEach(el => animObserver.observe(el));
 
   // Lazy-load YouTube iframes on click
   function loadVideo(overlay, videoId) {
