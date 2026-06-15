@@ -251,7 +251,80 @@
     }
     .stat-label { font-size: .75rem; color: var(--muted); margin-top: .2rem; line-height: 1.4; }
 
-    /* ── CERTIFICATIONS ── */
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .project-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem; align-items: center;
+      padding: 2rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      text-decoration: none; color: inherit;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.4);
+    }
+    .project-icon-wrap {
+      width: 72px; height: 72px; border-radius: 16px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; flex-shrink: 0;
+    }
+    .project-body { }
+    .project-top {
+      display: flex; align-items: center; gap: .75rem;
+      flex-wrap: wrap; margin-bottom: .5rem;
+    }
+    .project-name {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.2rem; font-weight: 800;
+      color: var(--text); letter-spacing: -.03em;
+    }
+    .project-tag {
+      font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .2rem .6rem;
+      border-radius: 100px; border: 1px solid var(--border-light);
+      color: var(--muted);
+    }
+    .project-tag.chrome { border-color: rgba(1,118,211,.4); color: var(--accent-bright); background: rgba(1,118,211,.08); }
+    .project-tag.open { border-color: rgba(46,132,74,.4); color: #4CAF7D; background: rgba(46,132,74,.08); }
+    .project-desc {
+      font-size: .875rem; color: var(--muted);
+      line-height: 1.7; margin-bottom: 1rem;
+    }
+    .project-features {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem;
+    }
+    .project-feature {
+      font-size: .72rem; font-weight: 600;
+      padding: .25rem .7rem; border-radius: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .project-cta {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .82rem; font-weight: 700;
+      color: var(--accent-bright);
+      text-decoration: none;
+      transition: gap .2s;
+    }
+    .project-cta:hover { gap: .75rem; }
+    .project-rating {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-size: .78rem; color: var(--gold); font-weight: 600;
+      margin-left: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .project-card { grid-template-columns: 1fr; }
+      .project-icon-wrap { width: 56px; height: 56px; font-size: 1.5rem; }
+    }
     #certs { border-bottom: 1px solid var(--border); }
     .certs-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
@@ -807,6 +880,40 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label reveal">Side Projects</p>
+    <h2 class="reveal">Built for the Community.</h2>
+    <p class="section-sub reveal">Projects I've shipped beyond client work — tools built to make the Salesforce community's life easier.</p>
+
+    <a href="https://chromewebstore.google.com/detail/salesforce-companion/apmdmekheggcegdfhlnkcpmmaahhdmol?hl=en" target="_blank" rel="noopener" class="project-card reveal">
+      <div class="project-icon-wrap">⚡</div>
+      <div class="project-body">
+        <div class="project-top">
+          <div class="project-name">Salesforce Companion</div>
+          <span class="project-tag chrome">Chrome Extension</span>
+          <span class="project-tag open">Free</span>
+        </div>
+        <p class="project-desc">
+          A productivity-boosting Chrome extension for Salesforce developers and admins. Get instant access to field search, API names, a SOQL query generator, and smart shortcuts — all in a sleek sidebar without leaving your Salesforce org.
+        </p>
+        <div class="project-features">
+          <span class="project-feature">🔍 Quick Field Search</span>
+          <span class="project-feature">📋 API Name Lookup</span>
+          <span class="project-feature">⚙️ SOQL Generator</span>
+          <span class="project-feature">⌨️ Smart Shortcuts</span>
+          <span class="project-feature">🎨 Sleek Sidebar UI</span>
+        </div>
+        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:.5rem;">
+          <span class="project-cta">Install on Chrome →</span>
+          <span class="project-rating">★ 5.0 <span style="color:var(--muted);font-weight:400;">· Chrome Web Store</span></span>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 
