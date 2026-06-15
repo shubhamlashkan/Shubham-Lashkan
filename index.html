@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham Lashkan — Salesforce Developer & Educator</title>
+
+  <!-- ── FAVICON (SVG inline — no extra file needed) ── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230176D3'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Sora,sans-serif' font-weight='800' font-size='13' fill='white' letter-spacing='-1'>SL</text></svg>" />
+
+  <!-- ── SEO ── -->
+  <meta name="description" content="Shubham Lashkan — 5× Salesforce Certified Developer, educator, and content creator from Indore, India. Apex, LWC, integrations, and teaching the Salesforce community." />
+  <meta name="keywords" content="Shubham Lashkan, Salesforce Developer, Apex, LWC, Lightning Web Components, Salesforce Certified, Educator, Indore" />
+  <meta name="author" content="Shubham Lashkan" />
+  <link rel="canonical" href="https://shubhamlashkan.com/" />
+
+  <!-- ── OPEN GRAPH (Facebook, LinkedIn, WhatsApp) ── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://shubhamlashkan.com/" />
+  <meta property="og:title"       content="Shubham Lashkan — Salesforce Developer & Educator" />
+  <meta property="og:description" content="5× Salesforce Certified Developer from India. Building on Salesforce. Teaching the world." />
+  <meta property="og:image"       content="https://shubhamlashkan.com/profile.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="Shubham Lashkan" />
+  <meta property="og:locale"      content="en_IN" />
+
+  <!-- ── TWITTER / X CARD ── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@shubhamlashkan" />
+  <meta name="twitter:creator"     content="@shubhamlashkan" />
+  <meta name="twitter:title"       content="Shubham Lashkan — Salesforce Developer & Educator" />
+  <meta name="twitter:description" content="5× Salesforce Certified Developer from India. Building on Salesforce. Teaching the world." />
+  <meta name="twitter:image"       content="https://shubhamlashkan.com/profile.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:           #06112A;
+      --bg2:          #0A1E3D;
+      --surface:      #0F2847;
+      --border:       #1A3B6B;
+      --border-light: #234d89;
+      --text:         #E8F4FD;
+      --muted:        #7BAFD4;
+      --accent:       #0176D3;
+      --accent-bright:#1B96FF;
+      --accent-dim:   #032D60;
+      --gold:         #FFB75D;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      background: rgba(6,17,42,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+    nav.scrolled { border-color: var(--border); }
+    .nav-logo {
+      font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1rem;
+      color: var(--text); text-decoration: none; letter-spacing: -.02em;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .nav-logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-bright); flex-shrink: 0; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: .825rem; font-weight: 500; letter-spacing: .02em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 9rem 2.5rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(1,118,211,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(1,118,211,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+    .hero-glow {
+      position: absolute; top: 15%; left: -10%; z-index: 0;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(1,118,211,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      position: relative; z-index: 1; width: 100%;
+    }
+    .hero-inner { }
+    .hero-right {
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    /* Floating cards */
+    .hero-card {
+      background: rgba(15,40,71,.7);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      backdrop-filter: blur(12px);
+      transition: border-color .2s, transform .2s;
+    }
+    .hero-card:hover { border-color: var(--accent); transform: translateX(4px); }
+    .hero-card-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent-bright); margin-bottom: .6rem;
+    }
+    .hero-card-content {
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .hero-card-icon {
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .hero-card-title {
+      font-family: 'Sora', sans-serif;
+      font-size: .9rem; font-weight: 700; color: var(--text);
+      line-height: 1.3;
+    }
+    .hero-card-sub { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+    /* Cert mini badges row */
+    .cert-mini-row {
+      display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem;
+    }
+    .cert-mini {
+      font-size: .65rem; font-weight: 700; letter-spacing: .06em;
+      padding: .2rem .55rem; border-radius: 100px;
+      border: 1px solid var(--border-light); color: var(--muted);
+    }
+    /* Stats mini grid */
+    .hero-stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: .5rem;
+    }
+    .hero-stat {
+      text-align: center; padding: .5rem;
+      background: rgba(1,118,211,.08); border-radius: 8px;
+      border: 1px solid rgba(1,118,211,.2);
+    }
+    .hero-stat-num {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.2rem; font-weight: 800;
+      color: var(--accent-bright); letter-spacing: -.03em;
+    }
+    .hero-stat-lbl { font-size: .65rem; color: var(--muted); line-height: 1.3; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: .75rem; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--accent-bright);
+      margin-bottom: 1.75rem;
+      padding: .4rem .9rem;
+      background: rgba(1,118,211,.12);
+      border: 1px solid rgba(1,118,211,.3);
+      border-radius: 100px;
+    }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-bright); }
+    h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800; line-height: 1.0; letter-spacing: -.05em; margin-bottom: 1.5rem;
+    }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #1B96FF 0%, #0176D3 50%, #5EB4FF 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-tagline {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 300;
+      color: var(--muted); letter-spacing: -.01em; margin-bottom: 2.5rem; max-width: 540px;
+    }
+    .hero-tagline strong { color: var(--text); font-weight: 600; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .8rem 1.6rem; border-radius: 6px;
+      font-size: .875rem; font-weight: 600; text-decoration: none;
+      transition: all .2s; cursor: pointer; letter-spacing: .01em;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+    .btn-primary:hover { background: var(--accent-bright); border-color: var(--accent-bright); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(1,118,211,.4); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-light); }
+    .btn-ghost:hover { border-color: var(--muted); transform: translateY(-1px); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 2.5rem; }
+    .container { max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-size: .7rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--accent-bright); margin-bottom: .75rem;
+    }
+    h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700; letter-spacing: -.04em; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--muted); max-width: 520px; margin-bottom: 3rem; }
+    p { color: var(--muted); }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .about-grid { display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: start; }
+    .about-text h2 { margin-bottom: 1.25rem; }
+    .about-text p { line-height: 1.85; margin-bottom: 1rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-photo-col { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
+    .photo-frame {
+      width: 180px; height: 180px; border-radius: 16px; overflow: hidden;
+      border: 2px solid var(--border-light); background: var(--surface); flex-shrink: 0;
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-location { font-size: .75rem; color: var(--muted); display: flex; align-items: center; gap: .35rem; }
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 3rem;
+    }
+    .stat-item { padding: 1.5rem 1.25rem; background: var(--surface); text-align: center; }
+    .stat-number {
+      font-family: 'Sora', sans-serif;
+      font-size: 2rem; font-weight: 800; color: var(--accent-bright);
+      letter-spacing: -.04em; display: block;
+    }
+    .stat-label { font-size: .75rem; color: var(--muted); margin-top: .2rem; line-height: 1.4; }
+
+    /* ── CERTIFICATIONS ── */
+    #certs { border-bottom: 1px solid var(--border); }
+    .certs-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .cert-card {
+      padding: 1.5rem 1.25rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 12px;
+      text-align: center; transition: border-color .2s, transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .cert-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .cert-card.pd1::before   { background: #1B96FF; }
+    .cert-card.admin::before { background: #2E844A; }
+    .cert-card.app::before   { background: #FE9339; }
+    .cert-card.pd2::before   { background: #9050E9; }
+    .cert-card.agent::before { background: #06AED5; }
+    .cert-card:hover { border-color: var(--border-light); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.4); }
+    .cert-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+    .cert-name { font-family: 'Sora', sans-serif; font-size: .82rem; font-weight: 700; color: var(--text); line-height: 1.35; margin-bottom: .35rem; }
+    .cert-level { font-size: .7rem; color: var(--muted); font-weight: 500; }
+    .cert-badge {
+      display: inline-block; margin-top: .6rem;
+      font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: .2rem .55rem; border-radius: 100px;
+      background: rgba(1,118,211,.18); color: var(--accent-bright); border: 1px solid rgba(1,118,211,.3);
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .skill-card {
+      padding: 1.25rem 1.5rem; border: 1px solid var(--border); border-radius: 10px;
+      background: var(--bg); transition: border-color .2s, transform .2s;
+    }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .skill-icon { font-size: 1.4rem; margin-bottom: .7rem; }
+    .skill-name { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .3rem; }
+    .skill-desc { font-size: .78rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── YOUTUBE ── */
+    #videos { border-bottom: 1px solid var(--border); }
+    .videos-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem; margin-top: 2.5rem;
+    }
+    .video-card {
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; background: var(--surface);
+      transition: border-color .2s, transform .2s;
+    }
+    .video-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .video-thumb {
+      position: relative; width: 100%; padding-bottom: 56.25%;
+      background: var(--bg); overflow: hidden;
+    }
+    .video-thumb img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      transition: transform .3s;
+    }
+    .video-card:hover .video-thumb img { transform: scale(1.04); }
+    /* Placeholder shown before play */
+    .video-thumb .thumb-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: var(--bg2);
+      cursor: pointer; transition: background .2s;
+    }
+    .video-thumb .thumb-overlay:hover { background: var(--accent-dim); }
+    .play-btn {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--accent); display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: #fff; margin-bottom: .75rem;
+      box-shadow: 0 4px 20px rgba(1,118,211,.5);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .thumb-overlay:hover .play-btn { transform: scale(1.1); box-shadow: 0 6px 28px rgba(1,118,211,.7); }
+    .thumb-label { font-size: .7rem; color: var(--muted); letter-spacing: .05em; }
+    .video-info { padding: 1rem 1.1rem; }
+    .video-title { font-family: 'Sora', sans-serif; font-size: .88rem; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: .35rem; }
+    .video-meta { font-size: .74rem; color: var(--muted); }
+    .yt-cta-row { margin-top: 2rem; display: flex; }
+
+    /* ── ARTICLES ── */
+    #articles { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .award-banner {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.1rem 1.5rem;
+      background: linear-gradient(135deg, rgba(255,183,93,.1) 0%, rgba(255,183,93,.05) 100%);
+      border: 1px solid rgba(255,183,93,.3);
+      border-radius: 10px; margin-bottom: 2.5rem;
+    }
+    .award-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .award-text { font-size: .85rem; color: var(--text); line-height: 1.5; }
+    .award-text strong { color: var(--gold); }
+    .platform-section { margin-bottom: 2.5rem; }
+    .platform-header {
+      display: flex; align-items: center; gap: .75rem;
+      margin-bottom: 1rem; padding-bottom: .75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .platform-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-bright); flex-shrink: 0; }
+    .platform-name { font-family: 'Sora', sans-serif; font-size: .85rem; font-weight: 700; color: var(--text); }
+    .platform-link { margin-left: auto; font-size: .75rem; color: var(--accent-bright); text-decoration: none; font-weight: 600; }
+    .platform-link:hover { text-decoration: underline; }
+    .article-list { display: flex; flex-direction: column; gap: .5rem; }
+    .article-item {
+      display: flex; align-items: center; gap: .75rem;
+      text-decoration: none; padding: .65rem 1rem;
+      border-radius: 8px; border: 1px solid transparent;
+      transition: background .2s, border-color .2s;
+    }
+    .article-item:hover { background: var(--surface); border-color: var(--border); }
+    .article-arrow { font-size: .75rem; color: var(--muted); flex-shrink: 0; }
+    .article-title { font-size: .84rem; color: var(--text); line-height: 1.4; }
+    .article-meta { margin-left: auto; font-size: .72rem; color: var(--muted); flex-shrink: 0; padding-left: .5rem; }
+
+    /* ── CONTENT CHANNELS ── */
+    #content { border-bottom: 1px solid var(--border); }
+    .channels-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .channel-card {
+      padding: 1.5rem; border: 1px solid var(--border); border-radius: 10px;
+      text-decoration: none; color: inherit; background: var(--surface);
+      transition: border-color .2s, transform .2s; display: block;
+    }
+    .channel-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .channel-top { display: flex; align-items: center; gap: .75rem; margin-bottom: .85rem; }
+    .channel-icon {
+      width: 38px; height: 38px; border-radius: 8px; background: var(--accent-dim);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--accent-bright); flex-shrink: 0;
+    }
+    .channel-name { font-family: 'Sora', sans-serif; font-size: .9rem; font-weight: 700; color: var(--text); }
+    .channel-handle { font-size: .72rem; color: var(--accent-bright); margin-top: .1rem; }
+    .channel-desc { font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg2); border-bottom: 1px solid var(--border); }
+    .contact-email {
+      display: inline-block;
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(1.1rem, 3vw, 1.6rem); font-weight: 700;
+      color: var(--text); text-decoration: none; letter-spacing: -.03em;
+      border-bottom: 2px solid var(--accent-dim); padding-bottom: 2px;
+      transition: border-color .2s, color .2s; margin-bottom: 2.5rem;
+    }
+    .contact-email:hover { border-color: var(--accent-bright); color: var(--accent-bright); }
+    .social-links { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .6rem 1.1rem; border: 1px solid var(--border); border-radius: 6px;
+      font-size: .82rem; color: var(--muted); text-decoration: none;
+      transition: all .2s; font-weight: 500;
+    }
+    .social-link:hover { color: var(--text); border-color: var(--accent-bright); background: rgba(1,118,211,.08); }
+
+    /* ── FOOTER ── */
+    footer { padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-text { font-size: .78rem; color: var(--muted); }
+
+    /* ── TIMELINE ── */
+    #timeline { border-bottom: 1px solid var(--border); }
+    .timeline {
+      position: relative;
+      margin-top: 2.5rem;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent) 0%, var(--border-light) 70%, var(--border) 100%);
+    }
+    .tl-item {
+      position: relative;
+      padding: 0 0 2.5rem 2rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -2rem; top: 4px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+      z-index: 1;
+    }
+    .tl-item.placeholder .tl-dot {
+      background: var(--bg2);
+      border-color: var(--bg);
+      box-shadow: 0 0 0 2px var(--border-light);
+      animation: pulse 2s infinite;
+    }
+    .tl-item.placeholder .tl-dot::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      background: var(--accent-bright);
+      opacity: .5;
+    }
+    .tl-period {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--accent-bright); margin-bottom: .4rem;
+    }
+    .tl-company {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--text); letter-spacing: -.02em;
+      margin-bottom: .2rem;
+    }
+    .tl-item.placeholder .tl-company {
+      background: linear-gradient(135deg, #1B96FF, #4CAF7D);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .tl-role {
+      font-size: .85rem; color: var(--muted);
+      margin-bottom: .75rem; font-weight: 500;
+    }
+    .tl-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .tl-tag {
+      font-size: .7rem; font-weight: 600;
+      padding: .2rem .6rem; border-radius: 100px;
+      background: var(--accent-dim);
+      color: var(--accent-bright);
+      border: 1px solid rgba(1,118,211,.3);
+      letter-spacing: .04em;
+    }
+    .tl-item.placeholder .tl-tag {
+      background: rgba(76,175,125,.1);
+      color: #4CAF7D;
+      border-color: rgba(76,175,125,.3);
+    }
+    .tl-avail-note {
+      display: inline-flex; align-items: center; gap: .5rem;
+      margin-top: .75rem;
+      font-size: .78rem; color: #4CAF7D; font-weight: 600;
+    }
+
+    /* ── AVAILABILITY ── */
+    .avail-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .35rem .85rem;
+      background: rgba(46,132,74,.15);
+      border: 1px solid rgba(46,132,74,.4);
+      border-radius: 100px;
+      font-size: .73rem; font-weight: 600; color: #4CAF7D;
+      letter-spacing: .04em; white-space: nowrap;
+    }
+    .avail-badge .pulse {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #4CAF7D; flex-shrink: 0;
+      box-shadow: 0 0 0 0 rgba(76,175,125,.6);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(76,175,125,.6); }
+      70%  { box-shadow: 0 0 0 6px rgba(76,175,125,0); }
+      100% { box-shadow: 0 0 0 0 rgba(76,175,125,0); }
+    }
+    /* Nav badge — smaller */
+    .nav-avail {
+      display: inline-flex; align-items: center; gap: .4rem;
+      padding: .25rem .65rem;
+      background: rgba(46,132,74,.15);
+      border: 1px solid rgba(46,132,74,.35);
+      border-radius: 100px;
+      font-size: .7rem; font-weight: 600; color: #4CAF7D;
+    }
+    .nav-avail .pulse { width: 6px; height: 6px; border-radius: 50%; background: #4CAF7D; animation: pulse 2s infinite; }
+    /* Contact availability card */
+    .avail-card {
+      display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(46,132,74,.08);
+      border: 1px solid rgba(46,132,74,.3);
+      border-radius: 10px; margin-bottom: 2rem;
+    }
+    .avail-card-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: .1rem; }
+    .avail-card-text { font-size: .875rem; color: var(--text); line-height: 1.6; }
+    .avail-card-text strong { color: #4CAF7D; }
+    .avail-card-text span { color: var(--muted); font-size: .8rem; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 36px; height: 36px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      z-index: 200;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: transform .3s, opacity .3s, width .3s;
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 150;
+      background: rgba(6,17,42,0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 2rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--muted); text-decoration: none;
+      letter-spacing: -.03em;
+      transition: color .2s, transform .2s;
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    .mobile-menu.open a {
+      opacity: 1; transform: translateY(0);
+    }
+    .mobile-menu.open a:nth-child(1) { transition: color .2s, opacity .3s .05s, transform .3s .05s; }
+    .mobile-menu.open a:nth-child(2) { transition: color .2s, opacity .3s .1s,  transform .3s .1s;  }
+    .mobile-menu.open a:nth-child(3) { transition: color .2s, opacity .3s .15s, transform .3s .15s; }
+    .mobile-menu.open a:nth-child(4) { transition: color .2s, opacity .3s .2s,  transform .3s .2s;  }
+    .mobile-menu.open a:nth-child(5) { transition: color .2s, opacity .3s .25s, transform .3s .25s; }
+    .mobile-menu a:hover { color: var(--text); }
+    .mobile-menu .mob-avail {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: 1rem !important; font-weight: 600 !important;
+      color: #4CAF7D !important;
+      padding: .6rem 1.4rem;
+      background: rgba(46,132,74,.12);
+      border: 1px solid rgba(46,132,74,.3);
+      border-radius: 100px;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      section { padding: 4rem 1.25rem; }
+      #hero { padding: 7rem 1.25rem 3rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-col { flex-direction: row; align-items: center; }
+      .stats-row { grid-template-columns: repeat(3,1fr); }
+      footer { padding: 1.5rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo"><div class="nav-logo-dot"></div>Shubham Lashkan</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#videos">Videos</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#contact" class="nav-avail"><span class="pulse"></span>Available for hire</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero"     onclick="closeMobileMenu()">Home</a>
+  <a href="#about"    onclick="closeMobileMenu()">About</a>
+  <a href="#videos"   onclick="closeMobileMenu()">Videos</a>
+  <a href="#articles" onclick="closeMobileMenu()">Articles</a>
+  <a href="#contact"  onclick="closeMobileMenu()" class="mob-avail"><span class="pulse" style="width:7px;height:7px;border-radius:50%;background:#4CAF7D;display:inline-block;animation:pulse 2s infinite;"></span>Available for hire</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-grid">
+
+    <!-- LEFT: text -->
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        5× Salesforce Certified · Developer · Educator
+      </div>
+      <div style="margin-bottom:1.5rem;">
+        <span class="avail-badge"><span class="pulse"></span>Open to freelance Salesforce projects</span>
+      </div>
+      <h1>Shubham<br/><em>Lashkan.</em></h1>
+      <p class="hero-tagline">
+        <strong>Building on Salesforce. Teaching the world.</strong><br/>
+        Apex developer, Lightning engineer, and content creator helping the next generation of Salesforce professionals grow.
+      </p>
+      <div class="hero-cta">
+        <a href="#videos" class="btn btn-primary">Watch My Videos ↓</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- RIGHT: floating info cards -->
+    <div class="hero-right">
+
+      <!-- Certifications card -->
+      <div class="hero-card">
+        <div class="hero-card-label">Salesforce Certifications</div>
+        <div class="cert-mini-row">
+          <span class="cert-mini" style="border-color:#1B96FF;color:#1B96FF;">Platform Developer I</span>
+          <span class="cert-mini" style="border-color:#2E844A;color:#2E844A;">Administrator</span>
+          <span class="cert-mini" style="border-color:#FE9339;color:#FE9339;">App Builder</span>
+          <span class="cert-mini" style="border-color:#9050E9;color:#9050E9;">Platform Developer II</span>
+          <span class="cert-mini" style="border-color:#06AED5;color:#06AED5;">Agentforce Specialist</span>
+        </div>
+      </div>
+
+      <!-- Current role card -->
+      <div class="hero-card">
+        <div class="hero-card-label">Current Role</div>
+        <div class="hero-card-content">
+          <div class="hero-card-icon">☁️</div>
+          <div>
+            <div class="hero-card-title">Salesforce Developer</div>
+            <div class="hero-card-sub">Advanz101 · Ridge Consulting Partner · Since Jul 2021</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats card -->
+      <div class="hero-card">
+        <div class="hero-card-label">By the Numbers</div>
+        <div class="hero-stats-grid">
+          <div class="hero-stat">
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-lbl">Years experience</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">5×</div>
+            <div class="hero-stat-lbl">Certified</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">🏆</div>
+            <div class="hero-stat-lbl">Ben Award 2024</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">23K</div>
+            <div class="hero-stat-lbl">Hashnode views</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Award card -->
+      <div class="hero-card" style="border-color:rgba(255,183,93,.3);background:rgba(255,183,93,.06);">
+        <div class="hero-card-label" style="color:var(--gold);">🏆 Latest Achievement</div>
+        <div class="hero-card-content">
+          <div class="hero-card-icon">🥇</div>
+          <div>
+            <div class="hero-card-title" style="color:var(--gold);">Salesforce Ben Content Award</div>
+            <div class="hero-card-sub">#1 Developer Article · The Bennys 2024</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p class="section-label">About</p>
+        <h2>Developer by craft.<br/>Educator by choice.</h2>
+        <p>I'm a Software Engineer and Salesforce Developer at Advanz101 — a Salesforce Consulting Partner — with over five years of hands-on experience. My work centers on Apex development, Lightning Web Components, and end-to-end integrations with 3rd party platforms using Apex and tools like Zapier.</p>
+        <p>Outside of client work, I'm passionate about knowledge-sharing. I teach coding, Salesforce, and Python through my YouTube channel and personal blog. Writing articles for Apex Hours, Salesforce Ben, and Medium is my way of giving back to a community that helped shape me.</p>
+      </div>
+      <div class="about-photo-col">
+        <div class="photo-frame">
+          <img src="profile.png" alt="Shubham Lashkan — at Salesforce TDX" />
+        </div>
+        <div class="photo-location">📍 Indore, India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <p class="section-label reveal">Experience</p>
+    <h2 class="reveal">The Journey.</h2>
+    <p class="section-sub reveal">From first commit to next chapter — a story still being written.</p>
+    <div class="timeline">
+
+      <!-- Placeholder -->
+      <div class="tl-item placeholder reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-period">2026 — Present</div>
+        <div class="tl-company">Your Company?</div>
+        <div class="tl-role">Salesforce Developer · Next Chapter</div>
+        <div class="tl-tags">
+          <span class="tl-tag">Open to opportunities</span>
+          <span class="tl-tag">Apex · LWC</span>
+          <span class="tl-tag">Full-time / Freelance</span>
+        </div>
+        <div class="tl-avail-note">
+          <span class="pulse" style="width:7px;height:7px;border-radius:50%;background:#4CAF7D;display:inline-block;box-shadow:0 0 0 0 rgba(76,175,125,.6);animation:pulse 2s infinite;"></span>
+          Currently available — let's talk
+        </div>
+      </div>
+
+      <!-- Advanz101 -->
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-period">Jul 2021 — 2026 · 5 years</div>
+        <div class="tl-company">Advanz101</div>
+        <div class="tl-role">Salesforce Developer · Ridge Consulting Partner</div>
+        <div class="tl-tags">
+          <span class="tl-tag">Apex</span>
+          <span class="tl-tag">LWC</span>
+          <span class="tl-tag">Sales Cloud</span>
+          <span class="tl-tag">Integrations</span>
+          <span class="tl-tag">Flows</span>
+          <span class="tl-tag">REST / SOAP</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="container">
+    <p class="section-label reveal">Certifications</p>
+    <h2 class="reveal">Salesforce Certified.</h2>
+    <p class="section-sub reveal">Five Trailhead credentials spanning administration, development, and the emerging agentic AI frontier.</p>
+    <div class="certs-grid">
+      <div class="cert-card pd1 reveal">
+        <span class="cert-icon">⚙️</span>
+        <div class="cert-name">Platform Developer I</div>
+        <div class="cert-level">Salesforce Certified</div>
+        <span class="cert-badge">Developer</span>
+      </div>
+      <div class="cert-card admin reveal">
+        <span class="cert-icon">🛡️</span>
+        <div class="cert-name">Administrator</div>
+        <div class="cert-level">Salesforce Certified</div>
+        <span class="cert-badge">Admin</span>
+      </div>
+      <div class="cert-card app reveal">
+        <span class="cert-icon">🔨</span>
+        <div class="cert-name">App Builder</div>
+        <div class="cert-level">Salesforce Certified</div>
+        <span class="cert-badge">Builder</span>
+      </div>
+      <div class="cert-card pd2 reveal">
+        <span class="cert-icon">🚀</span>
+        <div class="cert-name">Platform Developer II</div>
+        <div class="cert-level">Salesforce Certified</div>
+        <span class="cert-badge">Advanced Dev</span>
+      </div>
+      <div class="cert-card agent reveal">
+        <span class="cert-icon">🤖</span>
+        <div class="cert-name">Agentforce Specialist</div>
+        <div class="cert-level">Salesforce Certified</div>
+        <span class="cert-badge">AI · Agents</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label reveal">Skills</p>
+    <h2 class="reveal">What I work with.</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">☁️</div>
+        <div class="skill-name">Apex Development</div>
+        <div class="skill-desc">Triggers, batch jobs, scheduled Apex, dynamic SOQL, and REST/SOAP integrations.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">Lightning Web Components</div>
+        <div class="skill-desc">Modern component-based UI on the Salesforce platform using LWC and Aura.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-name">Declarative Salesforce</div>
+        <div class="skill-desc">Flows, validation rules, approval processes, custom metadata, and record types.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🔗</div>
+        <div class="skill-name">Integrations</div>
+        <div class="skill-desc">Connecting Salesforce with Facebook, Jira, Twitter, and third-party APIs.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-name">Agentforce / AI</div>
+        <div class="skill-desc">Building and deploying AI agents on the Salesforce Agentforce platform.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python</div>
+        <div class="skill-desc">Scripting, automation, and tutorials spanning data and web domains.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">Web Development</div>
+        <div class="skill-desc">HTML, CSS, JavaScript — building projects and teaching modern web fundamentals.</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">✍️</div>
+        <div class="skill-name">Technical Writing</div>
+        <div class="skill-desc">Publishing in-depth tutorials on Salesforce Ben, Apex Hours, Medium, and his personal blog.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUTUBE VIDEOS -->
+<section id="videos">
+  <div class="container">
+    <p class="section-label reveal">YouTube</p>
+    <h2 class="reveal">Top Videos.</h2>
+    <p class="section-sub reveal">Salesforce tutorials, coding deep-dives, and developer tips — straight from the channel.</p>
+
+    <!--
+      HOW TO UPDATE VIDEO IDs:
+      1. Go to a YouTube video
+      2. Copy the ID from the URL: youtube.com/watch?v=VIDEO_ID
+      3. Replace the VIDEO_ID in the iframe src below
+      Current IDs are placeholders — swap with real ones from @shubhamlashkan
+    -->
+    <div class="videos-grid">
+
+      <div class="video-card reveal">
+        <a href="https://youtu.be/Jdsk86XwOJM" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/Jdsk86XwOJM/hqdefault.jpg" alt="Salesforce Governor Limits Explained" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div class="thumb-overlay" style="background:rgba(6,17,42,.5);">
+              <div class="play-btn">▶</div>
+              <div class="thumb-label">Watch on YouTube</div>
+            </div>
+          </div>
+        </a>
+        <div class="video-info">
+          <div class="video-title">Salesforce Governor Limits Explained for Developers</div>
+          <div class="video-meta">Salesforce · Apex</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <a href="https://www.youtube.com/watch?v=gdA96ipQ3V0" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/gdA96ipQ3V0/hqdefault.jpg" alt="Generate and Store file in Salesforce Using Apex" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div class="thumb-overlay" style="background:rgba(6,17,42,.5);">
+              <div class="play-btn">▶</div>
+              <div class="thumb-label">Watch on YouTube</div>
+            </div>
+          </div>
+        </a>
+        <div class="video-info">
+          <div class="video-title">How to Generate and Store File in Salesforce Using Apex</div>
+          <div class="video-meta">Salesforce · Apex · Content Version</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <a href="https://www.youtube.com/watch?v=sk3x1MAktzA" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/sk3x1MAktzA/hqdefault.jpg" alt="How to use Facebook Graph API" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div class="thumb-overlay" style="background:rgba(6,17,42,.5);">
+              <div class="play-btn">▶</div>
+              <div class="thumb-label">Watch on YouTube</div>
+            </div>
+          </div>
+        </a>
+        <div class="video-info">
+          <div class="video-title">How to use Facebook Graph API — Demo Using Postman</div>
+          <div class="video-meta">Salesforce · Integration · API</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <a href="https://www.youtube.com/watch?v=6l75kqjLt-Q" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/6l75kqjLt-Q/hqdefault.jpg" alt="How to create managed package in Salesforce" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div class="thumb-overlay" style="background:rgba(6,17,42,.5);">
+              <div class="play-btn">▶</div>
+              <div class="thumb-label">Watch on YouTube</div>
+            </div>
+          </div>
+        </a>
+        <div class="video-info">
+          <div class="video-title">How to Create a Managed Package in Salesforce</div>
+          <div class="video-meta">Salesforce · Packaging</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <a href="https://www.youtube.com/watch?v=UpTYvuY0b6s" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/UpTYvuY0b6s/hqdefault.jpg" alt="How to share a Record Using Apex" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div class="thumb-overlay" style="background:rgba(6,17,42,.5);">
+              <div class="play-btn">▶</div>
+              <div class="thumb-label">Watch on YouTube</div>
+            </div>
+          </div>
+        </a>
+        <div class="video-info">
+          <div class="video-title">How to Share a Record Using Apex</div>
+          <div class="video-meta">Salesforce · Apex · Security</div>
+        </div>
+      </div>
+
+      <div class="video-card reveal">
+        <a href="https://www.youtube.com/watch?v=vTBxPXHSzyQ&list=PLPrnFIEBKtbbkoTzjS_Bo4sbJ-WEbeGm7" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/vTBxPXHSzyQ/hqdefault.jpg" alt="LWC Crash Course" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+            <div class="thumb-overlay" style="background:rgba(6,17,42,.5);">
+              <div class="play-btn">▶</div>
+              <div class="thumb-label">Watch on YouTube</div>
+            </div>
+          </div>
+        </a>
+        <div class="video-info">
+          <div class="video-title">LWC Crash Course — Lightning Web Components</div>
+          <div class="video-meta">Salesforce · LWC · Series</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="yt-cta-row reveal">
+      <a href="https://www.youtube.com/@shubhamlashkan" target="_blank" rel="noopener" class="btn btn-ghost">
+        ▶ &nbsp;View all videos on YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles">
+  <div class="container">
+    <p class="section-label reveal">Writing</p>
+    <h2 class="reveal">Articles &amp; Tutorials.</h2>
+    <div class="award-banner reveal">
+      <div class="award-icon">🏆</div>
+      <div class="award-text">
+        <strong>Salesforce Ben Content Award 2024 — First Place</strong><br/>
+        "Understanding How to Call Salesforce Web Service Using Postman" was voted the top Developer article of the year.
+      </div>
+    </div>
+
+    <div class="platform-section reveal">
+      <div class="platform-header">
+        <div class="platform-dot"></div>
+        <span class="platform-name">Salesforce Ben</span>
+        <a href="https://www.salesforceben.com/author/shubham-lashkan/" target="_blank" rel="noopener" class="platform-link">View all →</a>
+      </div>
+      <div class="article-list">
+        <a href="https://www.salesforceben.com/author/shubham-lashkan/" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Understanding How to Call Salesforce Web Service Using Postman &nbsp;<span style="color:var(--gold);font-size:.72rem;">🏆 #1 Developer Article 2024</span></span>
+        </a>
+        <a href="https://www.salesforceben.com/author/shubham-lashkan/" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Sales Cloud Projects &amp; Integrations — Patterns and Best Practices</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="platform-section reveal">
+      <div class="platform-header">
+        <div class="platform-dot" style="background:#9050E9;"></div>
+        <span class="platform-name">Apex Hours</span>
+        <a href="https://www.apexhours.com/author/shubhamlashkanapexhours-com/" target="_blank" rel="noopener" class="platform-link">View all →</a>
+      </div>
+      <div class="article-list">
+        <a href="https://www.apexhours.com/salesforce-summer-24-release-notes/" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Salesforce Summer '24 Release Notes — What's New</span>
+          <span class="article-meta">May 2024</span>
+        </a>
+        <a href="https://www.apexhours.com/setup-mass-quick-action-in-salesforce/" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">How to Setup Mass Quick Action in Salesforce</span>
+          <span class="article-meta">Jul 2024</span>
+        </a>
+        <a href="https://www.apexhours.com/author/shubhamlashkanapexhours-com/" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Create and Send Custom Notifications using Apex</span>
+          <span class="article-meta">Jun 2024</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="platform-section reveal">
+      <div class="platform-header">
+        <div class="platform-dot" style="background:#1B96FF;"></div>
+        <span class="platform-name">Blog — shubhamlashkan.com</span>
+        <a href="https://blog.shubhamlashkan.com/" target="_blank" rel="noopener" class="platform-link">View all →</a>
+      </div>
+      <div class="article-list">
+        <a href="https://blog.shubhamlashkan.com/scheduled-apex-in-salesforce" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Scheduled Apex in Salesforce</span>
+          <span class="article-meta">Dec 2024</span>
+        </a>
+        <a href="https://blog.shubhamlashkan.com/how-to-schedule-apex-class-using-the-datetime-field-of-an-sobject-in-salesforce" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">How to Schedule an Apex Class Using a Date/Time Field</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="platform-section reveal">
+      <div class="platform-header">
+        <div class="platform-dot" style="background:#2E844A;"></div>
+        <span class="platform-name">Medium</span>
+        <a href="https://medium.com/@shubhamlashkan" target="_blank" rel="noopener" class="platform-link">View all →</a>
+      </div>
+      <div class="article-list">
+        <a href="https://medium.com/@shubhamlashkan" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Salesforce tutorials, dev-life insights, and engineering perspectives</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="platform-section reveal">
+      <div class="platform-header">
+        <div class="platform-dot" style="background:#06AED5;"></div>
+        <span class="platform-name">Salesforce Verse</span>
+        <a href="https://salesforceverse.com" target="_blank" rel="noopener" class="platform-link">Visit →</a>
+      </div>
+      <div class="article-list">
+        <a href="https://salesforceverse.com" target="_blank" rel="noopener" class="article-item">
+          <span class="article-arrow">↗</span>
+          <span class="article-title">Salesforce learning resources, guides, and tutorials</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT CHANNELS -->
+<section id="content">
+  <div class="container">
+    <p class="section-label reveal">Platforms</p>
+    <h2 class="reveal">Find me online.</h2>
+    <p class="section-sub reveal">All the places where I share, teach, and connect.</p>
+    <div class="channels-grid">
+      <a href="https://www.youtube.com/@shubhamlashkan" target="_blank" rel="noopener" class="channel-card reveal">
+        <div class="channel-top">
+          <div class="channel-icon">▶</div>
+          <div>
+            <div class="channel-name">YouTube</div>
+            <div class="channel-handle">@shubhamlashkan</div>
+          </div>
+        </div>
+        <p class="channel-desc">Coding tutorials, Salesforce walkthroughs, Python, and web development videos.</p>
+      </a>
+      <a href="https://github.com/shubhamlashkan" target="_blank" rel="noopener" class="channel-card reveal">
+        <div class="channel-top">
+          <div class="channel-icon">⌥</div>
+          <div>
+            <div class="channel-name">GitHub</div>
+            <div class="channel-handle">shubhamlashkan</div>
+          </div>
+        </div>
+        <p class="channel-desc">Open-source Salesforce projects, Python scripts, and web apps.</p>
+      </a>
+      <a href="https://in.linkedin.com/in/shubhamlashkan" target="_blank" rel="noopener" class="channel-card reveal">
+        <div class="channel-top">
+          <div class="channel-icon">in</div>
+          <div>
+            <div class="channel-name">LinkedIn</div>
+            <div class="channel-handle">shubhamlashkan</div>
+          </div>
+        </div>
+        <p class="channel-desc">Professional updates, Salesforce insights, and community engagement.</p>
+      </a>
+      <a href="https://x.com/shubhamlashkan" target="_blank" rel="noopener" class="channel-card reveal">
+        <div class="channel-top">
+          <div class="channel-icon">𝕏</div>
+          <div>
+            <div class="channel-name">Twitter / X</div>
+            <div class="channel-handle">@shubhamlashkan</div>
+          </div>
+        </div>
+        <p class="channel-desc">Daily Salesforce insights, coding tips, and motivational posts.</p>
+      </a>
+      <a href="https://www.instagram.com/shubhamlashkan" target="_blank" rel="noopener" class="channel-card reveal">
+        <div class="channel-top">
+          <div class="channel-icon">◈</div>
+          <div>
+            <div class="channel-name">Instagram</div>
+            <div class="channel-handle">@shubhamlashkan</div>
+          </div>
+        </div>
+        <p class="channel-desc">Fun reels on programming, corporate life, and the developer experience.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label reveal">Contact</p>
+    <h2 class="reveal">Let's connect.</h2>
+    <p class="section-sub reveal">Have a Salesforce project, a collaboration idea, or just want to say hello? My inbox is open.</p>
+    <div class="avail-card reveal">
+      <div class="avail-card-icon">🟢</div>
+      <div class="avail-card-text">
+        <strong>Currently open to freelance Salesforce projects</strong><br/>
+        <span>Available for Apex development, LWC builds, Sales Cloud implementations, and integrations. Reach out and let's talk about your project.</span>
+      </div>
+    </div>
+    <a href="mailto:connect@shubhamlashkan.com" class="contact-email reveal">connect@shubhamlashkan.com</a>
+    <div class="social-links reveal">
+      <a href="https://in.linkedin.com/in/shubhamlashkan" target="_blank" rel="noopener" class="social-link">in LinkedIn</a>
+      <a href="https://github.com/shubhamlashkan" target="_blank" rel="noopener" class="social-link">⌥ GitHub</a>
+      <a href="https://x.com/shubhamlashkan" target="_blank" rel="noopener" class="social-link">𝕏 Twitter</a>
+      <a href="https://www.youtube.com/@shubhamlashkan" target="_blank" rel="noopener" class="social-link">▶ YouTube</a>
+      <a href="https://www.instagram.com/shubhamlashkan" target="_blank" rel="noopener" class="social-link">◈ Instagram</a>
+      <a href="https://medium.com/@shubhamlashkan" target="_blank" rel="noopener" class="social-link">✦ Medium</a>
+      <a href="https://blog.shubhamlashkan.com" target="_blank" rel="noopener" class="social-link">✎ Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-text">© 2025 Shubham Lashkan · Indore, India</span>
+  <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+    <a href="https://in.linkedin.com/in/shubhamlashkan" target="_blank" rel="noopener" class="footer-text" style="color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">LinkedIn</a>
+    <a href="https://www.youtube.com/@shubhamlashkan" target="_blank" rel="noopener" class="footer-text" style="color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">YouTube</a>
+    <a href="https://www.instagram.com/shubhamlashkan" target="_blank" rel="noopener" class="footer-text" style="color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Instagram</a>
+    <a href="https://x.com/shubhamlashkan" target="_blank" rel="noopener" class="footer-text" style="color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Twitter</a>
+    <a href="https://github.com/shubhamlashkan" target="_blank" rel="noopener" class="footer-text" style="color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll border
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 55);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Lazy-load YouTube iframes on click
+  function loadVideo(overlay, videoId) {
+    const iframe = overlay.previousElementSibling;
+    iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&autoplay=1`;
+    overlay.style.display = 'none';
+  }
+
+  // Fix nav offset for fixed header
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = navbar.offsetHeight + 16;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
